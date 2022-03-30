@@ -25,7 +25,7 @@ class ProdutoController extends Controller
         
         require __DIR__ . '/../../view/pages/produto/create.php';
     }
-    public function store()
+    public function store() 
     {
 
         $this->model->nomeProduto = $_POST['name'];

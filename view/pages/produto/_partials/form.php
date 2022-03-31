@@ -12,4 +12,3 @@
     <input type="number" id="codBarras" name="qtd" class="form-control">
 </div>
 
-<button type="submit" class="btn btn-primary">Enviar</button>

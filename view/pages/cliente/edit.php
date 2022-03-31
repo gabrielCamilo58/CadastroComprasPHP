@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/../../inicio-html.php'; ?>
+</ul>
 </div>
 </div>
 </nav>
@@ -6,4 +7,6 @@
 
 <form action="/atualizar/cliente" method="POST">
        <?php include __DIR__ . '/_partials/form.php'?>; 
+       <input style="display:none" type="text" name="cliente_id" value=<?php echo $idCliente; ?>>
+       <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

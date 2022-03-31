@@ -108,6 +108,7 @@ class MysqlPdo implements DriverStrategy
         if ($query) {
             $this->query = $this->pdo->prepare($query);
         }
+        
         $this->query->execute();
         return $this;
     }

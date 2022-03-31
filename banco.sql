@@ -19,6 +19,9 @@ CREATE TABLE pedidos (
    id INT AUTO_INCREMENT PRIMARY KEY,
    cliente_Id INT,
    produto_Id INT,
+   statusPedido VARCHAR(13),
+   dtPedido DATE,
+   numeroPedido int,
    FOREIGN KEY (cliente_Id) REFERENCES clientes(id) ON DELETE CASCADE,
    FOREIGN KEY (produto_Id) REFERENCES produtos(id) ON DELETE CASCADE
 );

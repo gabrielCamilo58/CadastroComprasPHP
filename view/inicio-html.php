@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,12 +18,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('index_cliente')}}">Clientes</a>
+                        <a class="nav-link active" aria-current="page" href="/cliente">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('index_pedido')}}">Pedido</a>
+                        <a class="nav-link" href="/produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('index_pedido')}}">Produtos</a>
+                        <a class="nav-link" href="/pedido">Pedidos</a>
                     </li>
-                </ul>

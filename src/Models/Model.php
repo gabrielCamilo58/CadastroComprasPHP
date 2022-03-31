@@ -33,6 +33,21 @@ class Model
             ->exec()
             ->all();
     }
+    public function search(string $filtro, string $campo)
+    {
+        $query = "SELECT * FROM ".$this->getTableName()." WHERE ".$campo." LIKE '%".$filtro."%'";
+        return $this->getDriver()
+        ->exec($query)
+        ->all();
+    }
+    public function orderBY(string $coluna, string $order)
+    {
+        $query = "SELECT * FROM ". $this->getTableName() ." ORDER BY ". $coluna ." ".$order;
+        //$query = "SELECT * FROM ".$this->getTableName()." WHERE ".$campo." LIKE '%".$filtro."%'";
+        return $this->getDriver()
+        ->exec($query)
+        ->all();
+    }
 
     public function findFirst($id)
     {

@@ -2,8 +2,6 @@
 
 include __DIR__ . '/../../inicio-html.php'; ?>
 
-
-</li>
 <li class="nav-item">
     <a class="nav-link" href="/pedidos/pagos">Pedidos Pagos</a>
 </li>
@@ -14,9 +12,9 @@ include __DIR__ . '/../../inicio-html.php'; ?>
 </ul>
 <form action="/ordenar/pedido" class="form form-inline ml-2" method="POST">
     <select class="form-select form-control" aria-label="Default select example" name="select">
-        <option selected>Ordenar pedido por:</option>
-        <option value="data">Data</option>
-        <option value="numero">Numero</option>
+        <option selected>Ordenar pedido por</option>
+        <option value="name">Nome</option>
+        <option value="preco">Preço</option>
     </select>
     <button class="btn btn-outline-success">Ordenar</button>
 </form>
@@ -26,7 +24,7 @@ include __DIR__ . '/../../inicio-html.php'; ?>
 </header>
 
 <body>
-    <h1>Pedidos Abertos</h1>
+    <h1>Pedidos Pagos</h1>
     <table class="table table-condensed">
         <thead>
             <tr>
@@ -39,9 +37,7 @@ include __DIR__ . '/../../inicio-html.php'; ?>
 
         <tbody>
 
-            <?php foreach ($pedidos as $pedido) { 
-                if($pedido['statusPedido'] === 'Em Aberto'){
-                ?>
+            <?php foreach ($pedidos as $pedido) {?>
                 <br>
                 <tr>
                     <td><?php echo $pedido['numeroPedido'] ?></td>
@@ -53,22 +49,16 @@ include __DIR__ . '/../../inicio-html.php'; ?>
                                 <input style="display:none" type="text" name="pedido_id" value=<?php echo $pedido['id']; ?>>
                                 <button type="submit" class="btn btn-danger">Deletar</button>
                             </form>
-                            <form action="/editar/pedido" method="POST">
-                                <input style="display:none" type="text" name="pedido_id" value=<?php echo $pedido['id']; ?>>
-                                <input style="display:none" type="text" name="novoStatus" value="pago">
+                                <form action="/editar/pedido" method="POST">
+                                    <input style="display:none" type="text" name="pedido_id" value=<?php echo $pedido['id']; ?>>
+                                    <input style="display:none" type="text" name="novoStatus" value="cancelado">
 
-                                <button type="submit" class="btn btn-info">Marcar como pago</button>
-                            </form>
-                            <form action="/editar/pedido" method="POST">
-                                <input style="display:none" type="text" name="pedido_id" value=<?php echo $pedido['id']; ?>>
-                                <input style="display:none" type="text" name="novoStatus" value="cancelado">
-
-                                <button type="submit" class="btn btn-info">Marcar como cancelado</button>
-                            </form>
+                                    <button type="submit" class="btn btn-info">Marcar como cancelado</button>
+                                </form>
                         </div>
                     </td>
                 </tr>
-            <?php }}; ?>
+            <?php }; ?>
         </tbody>
     </table>
 </body>
